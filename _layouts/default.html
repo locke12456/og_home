@@ -6,7 +6,7 @@
 {% seo %}
 {% feed_meta %}
 <link rel="icon" href="{{ '/assets/svg/emblem.svg' | relative_url }}" type="image/svg+xml">
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
 {% include sprite.html %}
@@ -20,6 +20,6 @@
 
 <a class="pagetop" href="#top" aria-label="回到頂端"><svg><use href="#i-arrow"/></svg></a>
 
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </body>
 </html>
