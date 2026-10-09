@@ -1,0 +1,5 @@
+_site/
+.jekyll-cache/
+.sass-cache/
+# Unity asset-database sidecars (this folder lives under Assets/).
+*.meta

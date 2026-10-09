@@ -1,0 +1,13 @@
+{%- assign home = '/' | relative_url -%}
+<header class="hd" id="top">
+  <a class="hd-logo" href="{{ home }}" aria-label="轉生者們 首頁"><svg><use href="#i-emblem"/></svg><span>轉生者們</span></a>
+  <button class="hd-menu" aria-label="開啟選單" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="hd-nav" aria-label="主要導覽">
+    <a href="{{ '/devlog/' | relative_url }}"{% if page.url contains '/devlog/' %} class="on" aria-current="page"{% endif %}><b>DEVLOG</b><small>開發日誌</small></a>
+    <a href="{{ home }}#story"><b>STORY</b><small>故事</small></a>
+    <a href="{{ home }}#character"><b>CHARACTER</b><small>角色</small></a>
+    <a href="{{ home }}#system"><b>SYSTEM</b><small>系統</small></a>
+    <a href="{{ home }}#ending"><b>ENDING</b><small>命運</small></a>
+    <a href="{{ home }}#movie"><b>MOVIE</b><small>影片</small></a>
+  </nav>
+</header>

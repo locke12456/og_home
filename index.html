@@ -1,42 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>轉生者們 ─ 官方網站</title>
-<meta name="description" content="扮演掌管轉生的神祇，引導異界的靈魂成為勇者，為混亂的世界帶來平衡。">
-<link rel="icon" href="assets/svg/emblem.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<!-- SVG sprite -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e3a8"/><stop offset="1" stop-color="#b8893a"/></linearGradient>
-    <symbol id="i-emblem" viewBox="0 0 200 200"><g fill="none" stroke="url(#gold)" stroke-width="3"><circle cx="100" cy="100" r="92"/><circle cx="100" cy="100" r="78" stroke-width="1.5"/><path d="M100 14 L118 82 L186 100 L118 118 L100 186 L82 118 L14 100 L82 82 Z"/><circle cx="100" cy="100" r="22"/></g><circle cx="100" cy="100" r="8" fill="url(#gold)"/></symbol>
-    <symbol id="i-ornament" viewBox="0 0 240 20"><g stroke="url(#gold)" fill="none" stroke-width="1.5"><path d="M0 10 H95 M145 10 H240"/><path d="M120 2 L128 10 L120 18 L112 10 Z" fill="url(#gold)"/><circle cx="102" cy="10" r="3"/><circle cx="138" cy="10" r="3"/></g></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M9 4 L17 12 L9 20" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
-    <symbol id="i-play" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="rgba(0,0,0,.4)" stroke="url(#gold)" stroke-width="3"/><path d="M40 30 L72 50 L40 70 Z" fill="url(#gold)"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4 L20 20 M20 4 L4 20" stroke="currentColor" stroke-width="2.4"/></symbol>
-    <!-- character silhouette -->
-    <symbol id="i-person" viewBox="0 0 300 500"><g fill="currentColor"><circle cx="150" cy="95" r="55"/><path d="M60 500 C60 300 80 190 150 175 C220 190 240 300 240 500 Z"/></g></symbol>
-  </defs>
-</svg>
-
-<header class="hd" id="top">
-  <a class="hd-logo" href="#top" aria-label="轉生者們 首頁"><svg><use href="#i-emblem"/></svg><span>轉生者們</span></a>
-  <button class="hd-menu" aria-label="開啟選單" aria-expanded="false"><span></span><span></span><span></span></button>
-  <nav class="hd-nav" aria-label="主要導覽">
-    <a href="#news"><b>NEWS</b><small>最新消息</small></a>
-    <a href="#story"><b>STORY</b><small>故事</small></a>
-    <a href="#character"><b>CHARACTER</b><small>角色</small></a>
-    <a href="#system"><b>SYSTEM</b><small>系統</small></a>
-    <a href="#ending"><b>ENDING</b><small>命運</small></a>
-    <a href="#movie"><b>MOVIE</b><small>影片</small></a>
-  </nav>
-</header>
-
-<main>
+---
+# Title/description come from _config.yml via jekyll-seo-tag.
+---
 <!-- HERO -->
 <section class="kv" aria-label="主視覺">
   <svg class="kv-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -67,30 +31,35 @@
       <a href="#movie" class="btn btn-ghost">觀看宣傳影片</a>
     </div>
   </div>
-  <a class="kv-scroll" href="#news" aria-label="向下捲動">SCROLL</a>
+  <a class="kv-scroll" href="#devlog" aria-label="向下捲動">SCROLL</a>
 </section>
 
-<!-- NEWS -->
-<section class="sec sec-news" id="news">
-  <div class="sec-head"><h2>NEWS</h2><p>最新消息</p><svg class="orn"><use href="#i-ornament"/></svg></div>
+<!-- DEVLOG -->
+<section class="sec sec-news" id="devlog">
+  <div class="sec-head"><h2>DEVLOG</h2><p>開發日誌</p><svg class="orn"><use href="#i-ornament"/></svg></div>
+  {%- assign featured = site.posts | where_exp: "p", "p.featured" %}
+  {%- if featured.size == 0 %}{% assign featured = site.posts %}{% endif %}
   <div class="news-wrap">
     <div class="banner-slider" aria-roledescription="carousel">
       <div class="banner-track">
-        <article class="banner b1"><span class="tag">EVENT</span><h3>先行登錄活動開跑</h3><p>預先登錄即可獲得「初始神力 ×300」</p></article>
-        <article class="banner b2"><span class="tag">UPDATE</span><h3>新系統「鍊金術」公開</h3><p>勇者視角的生產系統首度揭露</p></article>
-        <article class="banner b3"><span class="tag">INFO</span><h3>十三位神明 設定公開</h3><p>掌管屬性的眾神即將降臨</p></article>
+        {%- for post in featured limit:3 %}
+        {%- assign cat = site.devlog_cats[post.cat] %}
+        <a class="banner b{{ forloop.index0 | modulo: 3 | plus: 1 }}" href="{{ post.url | relative_url }}"{% if post.image %} style="--img:url('{{ post.image | relative_url }}')"{% endif %}><span class="tag">{{ cat.en | default: "DEVLOG" }}</span><h3>{{ post.title }}</h3><p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 40 }}</p></a>
+        {%- endfor %}
       </div>
       <button class="bn-prev" aria-label="上一則"><svg><use href="#i-arrow"/></svg></button>
       <button class="bn-next" aria-label="下一則"><svg><use href="#i-arrow"/></svg></button>
       <div class="bn-dots"></div>
     </div>
-    <ul class="news-list">
-      <li><time>2026.10.09</time><span class="cat c-ev">活動</span><a href="#">先行登錄活動開始！達成人數即可解鎖獎勵</a></li>
-      <li><time>2026.10.05</time><span class="cat c-up">更新</span><a href="#">系統介紹「鍊金・料理・鍛造」頁面公開</a></li>
-      <li><time>2026.10.01</time><span class="cat c-in">情報</span><a href="#">角色介紹：酒館老闆、酒保、虔誠的信徒</a></li>
-      <li><time>2026.09.28</time><span class="cat c-in">情報</span><a href="#">世界觀「五大系統」概要公開</a></li>
-      <li><time>2026.09.20</time><span class="cat c-ev">活動</span><a href="#">官方網站正式上線</a></li>
-    </ul>
+    <div class="news-side">
+      <ul class="news-list">
+        {%- for post in site.posts limit:5 %}
+        {%- assign cat = site.devlog_cats[post.cat] %}
+        <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time><span class="cat c-{{ post.cat }}">{{ cat.label | default: "日誌" }}</span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {%- endfor %}
+      </ul>
+      <a class="news-more" href="{{ '/devlog/' | relative_url }}">所有開發日誌<svg><use href="#i-arrow"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -185,15 +154,6 @@
     <span class="mv-label">第一彈 宣傳影片</span>
   </button>
 </section>
-</main>
-
-<footer class="ft">
-  <a class="ft-logo" href="#top"><svg><use href="#i-emblem"/></svg><span>轉生者們</span></a>
-  <ul class="ft-links"><li><a href="#">使用條款</a></li><li><a href="#">隱私權政策</a></li><li><a href="#">聯絡我們</a></li></ul>
-  <p class="ft-copy">© 2026 L Novel. All Rights Reserved.</p>
-</footer>
-
-<a class="pagetop" href="#top" aria-label="回到頂端"><svg><use href="#i-arrow"/></svg></a>
 
 <div class="modal" hidden role="dialog" aria-modal="true" aria-label="宣傳影片">
   <div class="modal-box">
@@ -201,7 +161,3 @@
     <div class="modal-video"><p>影片準備中<br><small>（之後可替換為 YouTube iframe）</small></p></div>
   </div>
 </div>
-
-<script src="assets/js/main.js"></script>
-</body>
-</html>

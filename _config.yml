@@ -1,0 +1,38 @@
+title: 轉生者們
+tagline: 官方網站
+description: 扮演掌管轉生的神祇，引導異界的靈魂成為勇者，為混亂的世界帶來平衡。
+url: https://lockestudio.net
+baseurl: ""
+lang: zh-Hant
+timezone: Asia/Taipei
+
+permalink: /devlog/:year/:month/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: devlog/feed.xml
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, body_class: sub }
+  - scope: { path: "" }
+    values: { layout: default }
+
+# Devlog categories: front matter `cat:` uses the key; CSS colours live in .c-<key>.
+devlog_cats:
+  system:    { label: 系統,   en: SYSTEM }
+  art:       { label: 美術,   en: ART }
+  fix:       { label: 修正,   en: FIX }
+  milestone: { label: 里程碑, en: MILESTONE }
+  info:      { label: 情報,   en: INFO }
+
+exclude:
+  - README.md
+  - "*.meta"
+  - "**/*.meta"

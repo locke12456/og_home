@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{%- assign cat = site.devlog_cats[page.cat] -%}
+<article class="post">
+  <header class="page-hd">
+    <p class="page-crumb"><a href="{{ '/devlog/' | relative_url }}">DEVLOG</a></p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+      {%- if cat %}<span class="cat c-{{ page.cat }}">{{ cat.label }}</span>{% endif %}
+    </p>
+    <svg class="orn"><use href="#i-ornament"/></svg>
+  </header>
+
+  <div class="post-paper">
+    {%- if page.image %}<img class="post-cover" src="{{ page.image | relative_url }}" alt="">{% endif %}
+    <div class="post-body">
+{{ content }}
+    </div>
+    {%- if page.tags.size > 0 %}
+    <ul class="post-tags">{% for t in page.tags %}<li>#{{ t }}</li>{% endfor %}</ul>
+    {%- endif %}
+  </div>
+
+  <nav class="post-nav" aria-label="文章導覽">
+    {%- if page.previous %}<a class="pn-prev" href="{{ page.previous.url | relative_url }}"><small>← 上一篇</small><span>{{ page.previous.title }}</span></a>{% else %}<span></span>{% endif %}
+    <a class="pn-all btn btn-ghost" href="{{ '/devlog/' | relative_url }}">所有日誌</a>
+    {%- if page.next %}<a class="pn-next" href="{{ page.next.url | relative_url }}"><small>下一篇 →</small><span>{{ page.next.title }}</span></a>{% else %}<span></span>{% endif %}
+  </nav>
+</article>
