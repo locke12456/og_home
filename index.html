@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>轉生者們 ─ 官方網站</title>
+<meta name="description" content="扮演掌管轉生的神祇，引導異界的靈魂成為勇者，為混亂的世界帶來平衡。">
+<link rel="icon" href="assets/svg/emblem.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!-- SVG sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e3a8"/><stop offset="1" stop-color="#b8893a"/></linearGradient>
+    <symbol id="i-emblem" viewBox="0 0 200 200"><g fill="none" stroke="url(#gold)" stroke-width="3"><circle cx="100" cy="100" r="92"/><circle cx="100" cy="100" r="78" stroke-width="1.5"/><path d="M100 14 L118 82 L186 100 L118 118 L100 186 L82 118 L14 100 L82 82 Z"/><circle cx="100" cy="100" r="22"/></g><circle cx="100" cy="100" r="8" fill="url(#gold)"/></symbol>
+    <symbol id="i-ornament" viewBox="0 0 240 20"><g stroke="url(#gold)" fill="none" stroke-width="1.5"><path d="M0 10 H95 M145 10 H240"/><path d="M120 2 L128 10 L120 18 L112 10 Z" fill="url(#gold)"/><circle cx="102" cy="10" r="3"/><circle cx="138" cy="10" r="3"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M9 4 L17 12 L9 20" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="rgba(0,0,0,.4)" stroke="url(#gold)" stroke-width="3"/><path d="M40 30 L72 50 L40 70 Z" fill="url(#gold)"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4 L20 20 M20 4 L4 20" stroke="currentColor" stroke-width="2.4"/></symbol>
+    <!-- character silhouette -->
+    <symbol id="i-person" viewBox="0 0 300 500"><g fill="currentColor"><circle cx="150" cy="95" r="55"/><path d="M60 500 C60 300 80 190 150 175 C220 190 240 300 240 500 Z"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="hd" id="top">
+  <a class="hd-logo" href="#top" aria-label="轉生者們 首頁"><svg><use href="#i-emblem"/></svg><span>轉生者們</span></a>
+  <button class="hd-menu" aria-label="開啟選單" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="hd-nav" aria-label="主要導覽">
+    <a href="#news"><b>NEWS</b><small>最新消息</small></a>
+    <a href="#story"><b>STORY</b><small>故事</small></a>
+    <a href="#character"><b>CHARACTER</b><small>角色</small></a>
+    <a href="#system"><b>SYSTEM</b><small>系統</small></a>
+    <a href="#ending"><b>ENDING</b><small>命運</small></a>
+    <a href="#movie"><b>MOVIE</b><small>影片</small></a>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="kv" aria-label="主視覺">
+  <svg class="kv-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="kvSky" cx="50%" cy="35%" r="75%"><stop offset="0" stop-color="#3a3f6b"/><stop offset=".55" stop-color="#1a1b33"/><stop offset="1" stop-color="#0a0a14"/></radialGradient>
+      <radialGradient id="kvGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe7a8" stop-opacity=".85"/><stop offset="1" stop-color="#ffe7a8" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1600" height="900" fill="url(#kvSky)"/>
+    <g fill="#fff" class="stars"><circle cx="120" cy="90" r="1.5"/><circle cx="340" cy="210" r="1"/><circle cx="520" cy="60" r="1.8"/><circle cx="1100" cy="120" r="1.4"/><circle cx="1280" cy="260" r="1"/><circle cx="1480" cy="80" r="1.6"/><circle cx="760" cy="40" r="1"/><circle cx="960" cy="230" r="1.2"/><circle cx="220" cy="330" r="1"/><circle cx="1400" cy="380" r="1.3"/></g>
+    <circle cx="800" cy="380" r="330" fill="url(#kvGlow)"/>
+    <g class="kv-ring" fill="none" stroke="#f0d48a" stroke-opacity=".5"><circle cx="800" cy="380" r="210" stroke-width="2"/><circle cx="800" cy="380" r="250" stroke-dasharray="4 10"/><circle cx="800" cy="380" r="300" stroke-opacity=".25"/></g>
+    <path d="M0 700 L160 610 L300 660 L470 560 L640 650 L800 590 L980 660 L1130 570 L1300 640 L1450 590 L1600 650 V900 H0 Z" fill="#14142a"/>
+    <path d="M0 780 L200 720 L420 770 L640 710 L860 770 L1080 720 L1300 770 L1600 720 V900 H0 Z" fill="#0b0b18"/>
+    <!-- towers -->
+    <g fill="#0b0b18"><rect x="230" y="600" width="26" height="130"/><path d="M224 600 L243 560 L262 600Z"/><rect x="1320" y="580" width="30" height="160"/><path d="M1313 580 L1335 535 L1357 580Z"/></g>
+    <!-- descending souls -->
+    <g fill="#ffe7a8" class="souls"><circle cx="620" cy="300" r="4"/><circle cx="980" cy="260" r="3"/><circle cx="700" cy="520" r="3.5"/><circle cx="900" cy="480" r="4"/><circle cx="820" cy="200" r="2.5"/></g>
+  </svg>
+  <div class="kv-inner">
+    <p class="kv-catch">靈魂已然耗損，世界瀕臨崩壞──<br>而你，是賜予轉生的神。</p>
+    <h1 class="kv-logo">
+      <svg class="kv-emblem" aria-hidden="true"><use href="#i-emblem"/></svg>
+      <span class="kv-title">轉生者們</span>
+      <span class="kv-sub">THE REINCARNATED</span>
+    </h1>
+    <div class="kv-cta">
+      <a href="#story" class="btn btn-gold">開始你的神諭</a>
+      <a href="#movie" class="btn btn-ghost">觀看宣傳影片</a>
+    </div>
+  </div>
+  <a class="kv-scroll" href="#news" aria-label="向下捲動">SCROLL</a>
+</section>
+
+<!-- NEWS -->
+<section class="sec sec-news" id="news">
+  <div class="sec-head"><h2>NEWS</h2><p>最新消息</p><svg class="orn"><use href="#i-ornament"/></svg></div>
+  <div class="news-wrap">
+    <div class="banner-slider" aria-roledescription="carousel">
+      <div class="banner-track">
+        <article class="banner b1"><span class="tag">EVENT</span><h3>先行登錄活動開跑</h3><p>預先登錄即可獲得「初始神力 ×300」</p></article>
+        <article class="banner b2"><span class="tag">UPDATE</span><h3>新系統「鍊金術」公開</h3><p>勇者視角的生產系統首度揭露</p></article>
+        <article class="banner b3"><span class="tag">INFO</span><h3>十三位神明 設定公開</h3><p>掌管屬性的眾神即將降臨</p></article>
+      </div>
+      <button class="bn-prev" aria-label="上一則"><svg><use href="#i-arrow"/></svg></button>
+      <button class="bn-next" aria-label="下一則"><svg><use href="#i-arrow"/></svg></button>
+      <div class="bn-dots"></div>
+    </div>
+    <ul class="news-list">
+      <li><time>2026.10.09</time><span class="cat c-ev">活動</span><a href="#">先行登錄活動開始！達成人數即可解鎖獎勵</a></li>
+      <li><time>2026.10.05</time><span class="cat c-up">更新</span><a href="#">系統介紹「鍊金・料理・鍛造」頁面公開</a></li>
+      <li><time>2026.10.01</time><span class="cat c-in">情報</span><a href="#">角色介紹：酒館老闆、酒保、虔誠的信徒</a></li>
+      <li><time>2026.09.28</time><span class="cat c-in">情報</span><a href="#">世界觀「五大系統」概要公開</a></li>
+      <li><time>2026.09.20</time><span class="cat c-ev">活動</span><a href="#">官方網站正式上線</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="sec sec-story" id="story">
+  <svg class="story-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><linearGradient id="stBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9dfc6"/><stop offset="1" stop-color="#cdbb91"/></linearGradient></defs>
+    <rect width="1600" height="900" fill="url(#stBg)"/>
+    <g fill="none" stroke="#8b6b34" stroke-opacity=".18" stroke-width="2"><circle cx="1350" cy="200" r="260"/><circle cx="1350" cy="200" r="200"/><circle cx="240" cy="760" r="220"/></g>
+  </svg>
+  <div class="sec-head dark"><h2>STORY</h2><p>故事</p><svg class="orn"><use href="#i-ornament"/></svg></div>
+  <div class="story-body">
+    <p class="lead">這是一個充滿混亂與爭鬥的世界。</p>
+    <p>無止盡的戰火讓靈魂不斷耗損，世界正一步步走向毀滅。<br>為了調和失衡，掌管轉生的神祇──也就是「你」──<br>必須定期從異界引入新的靈魂。</p>
+    <p>你將賜予他們新的生命與天賦，引導他們成為勇者。<br>然而，被引導者終將察覺：<br>身邊的一切，似乎都被一股無形的力量所操弄……</p>
+    <p class="lead">祝福，抑或詛咒？<br>轉生者的命運，掌握在你的手中。</p>
+  </div>
+</section>
+
+<!-- CHARACTER -->
+<section class="sec sec-chara" id="character">
+  <div class="sec-head"><h2>CHARACTER</h2><p>角色</p><svg class="orn"><use href="#i-ornament"/></svg></div>
+  <div class="chara">
+    <div class="chara-stage">
+      <svg class="chara-art" viewBox="0 0 300 500" aria-hidden="true"><use href="#i-person"/></svg>
+      <div class="chara-info" aria-live="polite">
+        <p class="chara-role"></p>
+        <h3 class="chara-name"></h3>
+        <p class="chara-en"></p>
+        <p class="chara-desc"></p>
+        <blockquote class="chara-quote"></blockquote>
+      </div>
+    </div>
+    <div class="chara-thumbs" role="tablist" aria-label="角色選擇"></div>
+  </div>
+</section>
+
+<!-- SYSTEM -->
+<section class="sec sec-system" id="system">
+  <div class="sec-head"><h2>SYSTEM</h2><p>系統</p><svg class="orn"><use href="#i-ornament"/></svg></div>
+  <div class="sys-tabs" role="tablist">
+    <button role="tab" class="on" data-view="god">上帝視角</button>
+    <button role="tab" data-view="hero">勇者視角</button>
+  </div>
+  <div class="sys-panel on" data-panel="god">
+    <article class="sys-card">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="url(#gold)" stroke-width="3"><circle cx="60" cy="60" r="44"/><path d="M60 16 V104 M16 60 H104"/><circle cx="60" cy="60" r="14" fill="url(#gold)"/></g></svg>
+      <h3>角色創造機制</h3><p>從異界召喚靈魂，決定其容貌、起源與天賦，親手塑造一位全新的勇者。</p>
+    </article>
+    <article class="sys-card">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="url(#gold)" stroke-width="3"><path d="M60 14 L106 96 H14 Z"/><circle cx="60" cy="68" r="16"/></g></svg>
+      <h3>五大天賦系統</h3><p>「起源・元素・成長天賦・天命・美德與罪宗」交織出每位轉生者獨一無二的命運。</p>
+    </article>
+    <article class="sys-card">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="url(#gold)" stroke-width="3"><circle cx="60" cy="60" r="46"/><g stroke-width="2"><circle cx="60.0" cy="22.0" r="4"/><circle cx="77.7" cy="26.4" r="4"/><circle cx="91.3" cy="38.4" r="4"/><circle cx="97.7" cy="55.4" r="4"/><circle cx="95.5" cy="73.5" r="4"/><circle cx="85.2" cy="88.4" r="4"/><circle cx="69.1" cy="96.9" r="4"/><circle cx="50.9" cy="96.9" r="4"/><circle cx="34.8" cy="88.4" r="4"/><circle cx="24.5" cy="73.5" r="4"/><circle cx="22.3" cy="55.4" r="4"/><circle cx="28.7" cy="38.4" r="4"/><circle cx="42.3" cy="26.4" r="4"/></g></g></svg>
+      <h3>十三位神明</h3><p>掌管不同屬性的十三柱神明，與你共同干涉世界的規則──是盟友，也可能是對手。</p>
+    </article>
+  </div>
+  <div class="sys-panel" data-panel="hero">
+    <article class="sys-card">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="url(#gold)" stroke-width="3"><path d="M46 14 H74 M52 14 V46 L24 96 Q20 106 32 106 H88 Q100 106 96 96 L68 46 V14"/><path d="M34 80 H86"/></g></svg>
+      <h3>鍊金系統</h3><p>採集素材、調和藥劑，以知識撬動世界的法則。</p>
+    </article>
+    <article class="sys-card">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="url(#gold)" stroke-width="3"><path d="M18 62 H102 Q100 100 60 100 Q20 100 18 62 Z"/><path d="M44 50 Q38 40 46 30 M60 50 Q54 38 62 26 M76 50 Q70 40 78 30"/></g></svg>
+      <h3>料理系統</h3><p>以異世界食材烹調佳餚，為冒險提供強化與恢復。</p>
+    </article>
+    <article class="sys-card">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="url(#gold)" stroke-width="3"><path d="M24 30 L66 30 L66 52 L24 52 Z" transform="rotate(-30 45 41)"/><path d="M58 48 L98 98"/><path d="M14 104 H70"/></g></svg>
+      <h3>鍛造系統</h3><p>鍛打武器與防具，讓轉生者的力量化為實體。</p>
+    </article>
+  </div>
+</section>
+
+<!-- ENDING -->
+<section class="sec sec-ending" id="ending">
+  <div class="sec-head"><h2>ENDING</h2><p>命運的分歧</p><svg class="orn"><use href="#i-ornament"/></svg></div>
+  <ol class="routes">
+    <li><span>Ⅰ</span><h3>殞落</h3><p>轉生者死亡，靈魂被傳送至你的身邊，一切記憶與力量歸於神。</p></li>
+    <li><span>Ⅱ</span><h3>庸碌</h3><p>未能找出操弄命運的幕後黑手，平凡地度過一生。</p></li>
+    <li><span>Ⅲ</span><h3>謁見</h3><p>達成世界任務，與伙伴一同來到你面前。挑戰神，或接受命運？</p></li>
+    <li><span>Ⅳ</span><h3>魔王</h3><p>被魔族之力腐化，走向毀滅世界──或弒神篡位的道路。</p></li>
+  </ol>
+</section>
+
+<!-- MOVIE -->
+<section class="sec sec-movie" id="movie">
+  <div class="sec-head"><h2>MOVIE</h2><p>影片</p><svg class="orn"><use href="#i-ornament"/></svg></div>
+  <button class="movie-thumb" aria-label="播放宣傳影片">
+    <svg class="mv-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="900" fill="#1a1b33"/><circle cx="800" cy="450" r="380" fill="none" stroke="#f0d48a" stroke-opacity=".2" stroke-width="2"/><circle cx="800" cy="450" r="260" fill="none" stroke="#f0d48a" stroke-opacity=".3" stroke-dasharray="6 12"/><path d="M0 720 L300 620 L600 700 L900 610 L1200 690 L1600 620 V900 H0Z" fill="#0b0b18"/></svg>
+    <svg class="mv-play"><use href="#i-play"/></svg>
+    <span class="mv-label">第一彈 宣傳影片</span>
+  </button>
+</section>
+</main>
+
+<footer class="ft">
+  <a class="ft-logo" href="#top"><svg><use href="#i-emblem"/></svg><span>轉生者們</span></a>
+  <ul class="ft-links"><li><a href="#">使用條款</a></li><li><a href="#">隱私權政策</a></li><li><a href="#">聯絡我們</a></li></ul>
+  <p class="ft-copy">© 2026 L Novel. All Rights Reserved.</p>
+</footer>
+
+<a class="pagetop" href="#top" aria-label="回到頂端"><svg><use href="#i-arrow"/></svg></a>
+
+<div class="modal" hidden role="dialog" aria-modal="true" aria-label="宣傳影片">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="關閉"><svg><use href="#i-x"/></svg></button>
+    <div class="modal-video"><p>影片準備中<br><small>（之後可替換為 YouTube iframe）</small></p></div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
