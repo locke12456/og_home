@@ -11,8 +11,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-plugins:
-  - jekyll-seo-tag
+plugins: []
 
 # Languages: zh-Hant lives at /, English under /en/ (en/_posts for its posts).
 # A translation pairs with its original by the same file slug (posts) or `ref` (pages).

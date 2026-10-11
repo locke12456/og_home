@@ -5,8 +5,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-{% seo %}
-<link type="application/atom+xml" rel="alternate" href="{{ t.base | append: '/devlog/feed.xml' | absolute_url }}" title="{{ site.title }} · {{ t.devlog_title }}">
+{% include seo.html %}
+<link type="application/atom+xml" rel="alternate" href="{{ t.base | append: '/devlog/feed.xml' | absolute_url }}" title="{{ t.brand }} · {{ t.devlog_title }}">
 {%- if zh_url %}
 <link rel="alternate" hreflang="zh-Hant" href="{{ zh_url }}">
 <link rel="alternate" hreflang="x-default" href="{{ zh_url }}">

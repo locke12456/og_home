@@ -24,8 +24,8 @@
     <p class="kv-catch">{{ h.catch }}</p>
     <h1 class="kv-logo">
       <svg class="kv-emblem" aria-hidden="true"><use href="#i-emblem"/></svg>
-      <span class="kv-title">轉生者們</span>
-      <span class="kv-sub">THE REINCARNATED</span>
+      <span class="kv-title">{{ h.kv_title }}</span>
+      {%- if h.kv_sub != "" %}<span class="kv-sub">{{ h.kv_sub }}</span>{% endif %}
     </h1>
     <div class="kv-cta">
       <a href="#story" class="btn btn-gold">{{ h.cta_story }}</a>

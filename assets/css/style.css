@@ -231,6 +231,18 @@ body.sub .hd{background:rgba(10,10,20,.92);box-shadow:0 1px 0 rgba(226,194,122,.
 .dl-text small{display:block;margin-top:4px;font-size:14px;color:var(--muted)}
 .dl-empty{text-align:center;color:var(--muted);padding:48px 0;font-family:var(--serif);letter-spacing:.15em}
 
+/* English: Latin fonts first and tighter tracking (the CJK spacing looks off in Latin) */
+html:lang(en){--serif:Georgia,"Times New Roman",serif;--sans:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif}
+:lang(en) .hd-logo{letter-spacing:.04em}
+:lang(en) .kv-title{font-size:clamp(40px,7.5vw,104px);letter-spacing:.03em;padding-left:0}
+:lang(en) .kv-catch{letter-spacing:.04em;line-height:1.8}
+:lang(en) .btn{letter-spacing:.06em}
+:lang(en) .story-body{letter-spacing:.01em;line-height:2}
+:lang(en) .post-body{letter-spacing:normal;line-height:1.8}
+:lang(en) .post-title,:lang(en) .chara-name,:lang(en) .banner h3{letter-spacing:.01em}
+:lang(en) .sys-card h3,:lang(en) .routes h3,:lang(en) .post-body h2,:lang(en) .post-body h3,:lang(en) .dl-text b,:lang(en) .sys-tabs button,:lang(en) .dl-filter button,:lang(en) .news-more{letter-spacing:.03em}
+.chara-en:empty{display:none}
+
 /* responsive */
 @media (max-width:900px){
   .hd{padding:0 16px}
@@ -253,7 +265,7 @@ body.sub .hd{background:rgba(10,10,20,.92);box-shadow:0 1px 0 rgba(226,194,122,.
   .chara-thumbs{gap:48px 36px;padding:0 16px}.chara-thumbs button{width:60px;height:60px}.banner{padding:24px 56px}
 }
 .news-list .cat{justify-self:start}
-@media (max-width:560px){.story-body br{display:none}.banner-slider{aspect-ratio:4/3}.routes{grid-template-columns:1fr}.sys-tabs button{min-width:130px}.news-list li{grid-template-columns:auto 1fr}.news-list a{grid-column:1/-1}
+@media (max-width:560px){.story-body br,:lang(en) .kv-catch br{display:none}.banner-slider{aspect-ratio:4/3}.routes{grid-template-columns:1fr}.sys-tabs button{min-width:130px}.news-list li{grid-template-columns:auto 1fr}.news-list a{grid-column:1/-1}
   .page-hd{padding:112px 16px 40px}.devlog{padding:0 16px 72px}
   .dl-list a{grid-template-columns:auto 1fr;gap:8px 12px}.dl-list .cat{justify-self:start}.dl-text{grid-column:1/-1}
   .post-nav{grid-template-columns:1fr 1fr;padding:32px 16px 72px}.pn-all{grid-column:1/-1;grid-row:2;justify-self:center}

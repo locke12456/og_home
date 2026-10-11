@@ -1,7 +1,7 @@
 {%- assign home = t.base | append: '/' | relative_url -%}
 {%- assign devlog_url = t.base | append: '/devlog/' | relative_url -%}
 <header class="hd" id="top">
-  <a class="hd-logo" href="{{ home }}" aria-label="轉生者們 {{ t.home_title }}"><svg><use href="#i-emblem"/></svg><span>轉生者們</span></a>
+  <a class="hd-logo" href="{{ home }}" aria-label="{{ t.brand }} {{ t.home_title }}"><svg><use href="#i-emblem"/></svg><span>{{ t.brand }}</span></a>
   <button class="hd-menu" aria-label="{{ t.menu_open }}" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="hd-nav" aria-label="{{ t.nav_main }}">
     <a href="{{ devlog_url }}"{% if page.url contains '/devlog/' %} class="on" aria-current="page"{% endif %}><b>DEVLOG</b>{% if t.nav.devlog != "" %}<small>{{ t.nav.devlog }}</small>{% endif %}</a>

@@ -1,5 +1,9 @@
 # UI strings per language. Keys are page.lang values; `base` is the URL prefix.
 zh-Hant:
+  brand: 轉生者們
+  tagline: 官方網站
+  description: 扮演掌管轉生的神祇，引導異界的靈魂成為勇者，為混亂的世界帶來平衡。
+  locale: zh_TW
   base: ""
   label: 中文
   switch: 中文
@@ -31,6 +35,10 @@ zh-Hant:
   footer_privacy: 隱私權政策
   footer_contact: 聯絡我們
 en:
+  brand: The Reincarnated
+  tagline: Official Site
+  description: Play the god who governs rebirth, guiding souls from other worlds to become heroes and bring balance to a chaotic world.
+  locale: en_US
   base: /en
   label: English
   switch: EN

@@ -1,0 +1,34 @@
+{%- comment -%}
+Per-language SEO tags (jekyll-seo-tag only knows one site title).
+Expects `t` = site.data.i18n[page.lang].
+{%- endcomment -%}
+{%- if page.ref == 'home' -%}
+  {%- assign seo_title = t.brand | append: ' | ' | append: t.tagline -%}
+{%- elsif page.title -%}
+  {%- assign seo_title = page.title | append: ' | ' | append: t.brand -%}
+{%- else -%}
+  {%- assign seo_title = t.brand -%}
+{%- endif -%}
+{%- assign seo_desc = page.description | default: t.description | strip_html | normalize_whitespace -%}
+<title>{{ seo_title | escape }}</title>
+<meta name="description" content="{{ seo_desc | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="{{ t.brand | escape }}">
+<meta property="og:title" content="{{ page.title | default: t.brand | escape }}">
+<meta property="og:description" content="{{ seo_desc | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:locale" content="{{ t.locale }}">
+{%- if page.collection == 'posts' %}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{%- else %}
+<meta property="og:type" content="website">
+{%- endif %}
+{%- if page.image %}
+<meta property="og:image" content="{{ page.image | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+{%- else %}
+<meta name="twitter:card" content="summary">
+{%- endif %}
+<meta name="twitter:title" content="{{ page.title | default: t.brand | escape }}">
+<meta name="twitter:description" content="{{ seo_desc | escape }}">

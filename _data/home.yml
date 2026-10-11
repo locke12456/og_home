@@ -1,6 +1,8 @@
 # Home page copy per language (rendered by _includes/home.html).
 zh-Hant:
   kv_label: 主視覺
+  kv_title: 轉生者們
+  kv_sub: THE REINCARNATED
   catch: 靈魂已然耗損，世界瀕臨崩壞──<br>而你，是賜予轉生的神。
   cta_story: 開始你的神諭
   cta_movie: 觀看宣傳影片
@@ -47,6 +49,8 @@ zh-Hant:
 
 en:
   kv_label: Key visual
+  kv_title: The Reincarnated
+  kv_sub: ""
   catch: Souls are wearing thin, and the world is on the brink of collapse—<br>and you are the god who grants rebirth.
   cta_story: Begin your oracle
   cta_movie: Watch the trailer
@@ -61,12 +65,12 @@ en:
   character_sub: ""
   character_pick: Choose a character
   characters:
-    - { role: Protagonist, name: The Reincarnated, en: 轉生者, c: "#e2c27a", desc: "A soul summoned from another world. Given a new life and new gifts, they carry the duty of restoring balance—only to slowly sense the unseen hand behind their fate.", quote: "…I can't shake the feeling that someone is always watching me." }
-    - { role: Deity, name: The God of Rebirth, en: 轉生之神, c: "#9fb8ff", desc: "That is, you. The god who governs rebirth and brings souls in from other worlds, reaching into every corner of the reincarnated's life—whether as blessing or as calamity.", quote: "Go forth, my hero. Everything about you is mine to decide." }
-    - { role: Tavern, name: The Tavern Master, en: 酒館老闆, c: "#f0a68a", desc: "A tavern master who can't read. Warm and welcoming, but forever misspelling the menu and getting corrected by the bartender.", quote: "\"Stew\"? \"Stoo\"? What's the difference? The customers are waiting!" }
-    - { role: Tavern, name: The Sober Bartender, en: 不喝酒的酒保, c: "#c79bff", desc: "A cool, sharp-tongued bartender who swore off drinking—because every time they woke up after a night of it, the least popular patron in the tavern was lying beside them.", quote: "Sorry, I've quit drinking. …By the way, has your bard troupe released anything new lately?" }
-    - { role: Church, name: The Devout, en: 虔誠的信徒, c: "#8ad0c4", desc: "A man who lights a candle at the church to pray for his girlfriend. One look at the overflowing donation box, and his faith begins to waver.", quote: "Well, since I've come this far…" }
-    - { role: Townsfolk, name: The Abbreviator, en: 縮寫愛好者, c: "#f2d36b", desc: "A mysterious figure who must end every sentence by stressing an abbreviation. TMI (Too Much Information).", quote: "It's called The Reincarnated. TR for short. T.R." }
+    - { role: Protagonist, name: The Reincarnated, en: "", c: "#e2c27a", desc: "A soul summoned from another world. Given a new life and new gifts, they carry the duty of restoring balance—only to slowly sense the unseen hand behind their fate.", quote: "…I can't shake the feeling that someone is always watching me." }
+    - { role: Deity, name: The God of Rebirth, en: "", c: "#9fb8ff", desc: "That is, you. The god who governs rebirth and brings souls in from other worlds, reaching into every corner of the reincarnated's life—whether as blessing or as calamity.", quote: "Go forth, my hero. Everything about you is mine to decide." }
+    - { role: Tavern, name: The Tavern Master, en: "", c: "#f0a68a", desc: "A tavern master who can't read. Warm and welcoming, but forever misspelling the menu and getting corrected by the bartender.", quote: "\"Stew\"? \"Stoo\"? What's the difference? The customers are waiting!" }
+    - { role: Tavern, name: The Sober Bartender, en: "", c: "#c79bff", desc: "A cool, sharp-tongued bartender who swore off drinking—because every time they woke up after a night of it, the least popular patron in the tavern was lying beside them.", quote: "Sorry, I've quit drinking. …By the way, has your bard troupe released anything new lately?" }
+    - { role: Church, name: The Devout, en: "", c: "#8ad0c4", desc: "A man who lights a candle at the church to pray for his girlfriend. One look at the overflowing donation box, and his faith begins to waver.", quote: "Well, since I've come this far…" }
+    - { role: Townsfolk, name: The Abbreviator, en: "", c: "#f2d36b", desc: "A mysterious figure who must end every sentence by stressing an abbreviation. TMI (Too Much Information).", quote: "It's called The Reincarnated. TR for short. T.R." }
   system_sub: ""
   tab_god: God's view
   tab_hero: Hero's view

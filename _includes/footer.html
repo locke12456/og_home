@@ -1,5 +1,5 @@
 <footer class="ft">
-  <a class="ft-logo" href="{{ t.base | append: '/' | relative_url }}"><svg><use href="#i-emblem"/></svg><span>轉生者們</span></a>
+  <a class="ft-logo" href="{{ t.base | append: '/' | relative_url }}"><svg><use href="#i-emblem"/></svg><span>{{ t.brand }}</span></a>
   <ul class="ft-links"><li><a href="{{ t.base | append: '/devlog/' | relative_url }}">{{ t.devlog_title }}</a></li><li><a href="{{ t.base | append: '/devlog/feed.xml' | relative_url }}">RSS</a></li><li><a href="#">{{ t.footer_terms }}</a></li><li><a href="#">{{ t.footer_privacy }}</a></li><li><a href="#">{{ t.footer_contact }}</a></li></ul>
   <p class="ft-copy">© {{ site.time | date: "%Y" }} Locke Studio. All Rights Reserved.</p>
 </footer>
