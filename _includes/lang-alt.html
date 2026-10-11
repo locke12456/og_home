@@ -1,0 +1,24 @@
+{%- comment -%}
+Finds this page's translation. Sets `alt_lang`, `alt_url` (the translation, or the
+other language's home when there is none) and `zh_url` / `en_url` for hreflang.
+Posts pair by file slug; pages pair by front matter `ref`.
+{%- endcomment -%}
+{%- if page.lang == 'en' -%}{%- assign alt_lang = 'zh-Hant' -%}{%- else -%}{%- assign alt_lang = 'en' -%}{%- endif -%}
+{%- assign alt_doc = nil -%}
+{%- if page.collection == 'posts' -%}
+  {%- assign alt_doc = site.posts | where: "slug", page.slug | where: "lang", alt_lang | first -%}
+{%- elsif page.ref -%}
+  {%- assign alt_doc = site.pages | where: "ref", page.ref | where: "lang", alt_lang | first -%}
+{%- endif -%}
+{%- if alt_doc -%}
+  {%- assign alt_url = alt_doc.url | relative_url -%}
+{%- else -%}
+  {%- assign alt_url = site.data.i18n[alt_lang].base | append: '/' | relative_url -%}
+{%- endif -%}
+{%- if page.lang == 'en' -%}
+  {%- assign en_url = page.url | absolute_url -%}
+  {%- if alt_doc -%}{%- assign zh_url = alt_doc.url | absolute_url -%}{%- else -%}{%- assign zh_url = nil -%}{%- endif -%}
+{%- else -%}
+  {%- assign zh_url = page.url | absolute_url -%}
+  {%- if alt_doc -%}{%- assign en_url = alt_doc.url | absolute_url -%}{%- else -%}{%- assign en_url = nil -%}{%- endif -%}
+{%- endif -%}

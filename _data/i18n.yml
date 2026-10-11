@@ -1,0 +1,63 @@
+# UI strings per language. Keys are page.lang values; `base` is the URL prefix.
+zh-Hant:
+  base: ""
+  label: 中文
+  switch: 中文
+  home_title: 首頁
+  nav:
+    devlog: 開發日誌
+    story: 故事
+    character: 角色
+    system: 系統
+    ending: 命運
+    movie: 影片
+  menu_open: 開啟選單
+  nav_main: 主要導覽
+  devlog_title: 開發日誌
+  devlog_all: 所有開發日誌
+  devlog_back: 所有日誌
+  devlog_filter: 分類篩選
+  devlog_filter_all: 全部
+  devlog_empty: 還沒有文章。
+  devlog_none: 這個分類還沒有文章。
+  post_nav: 文章導覽
+  prev: ← 上一篇
+  next: 下一篇 →
+  slide_prev: 上一則
+  slide_next: 下一則
+  slide_n: 第 {n} 則
+  pagetop: 回到頂端
+  footer_terms: 使用條款
+  footer_privacy: 隱私權政策
+  footer_contact: 聯絡我們
+en:
+  base: /en
+  label: English
+  switch: EN
+  home_title: Home
+  nav:
+    devlog: ""
+    story: ""
+    character: ""
+    system: ""
+    ending: ""
+    movie: ""
+  menu_open: Open menu
+  nav_main: Main navigation
+  devlog_title: Devlog
+  devlog_all: All devlog posts
+  devlog_back: All posts
+  devlog_filter: Filter by category
+  devlog_filter_all: All
+  devlog_empty: No posts yet.
+  devlog_none: No posts in this category yet.
+  post_nav: Post navigation
+  prev: ← Previous
+  next: Next →
+  slide_prev: Previous
+  slide_next: Next
+  slide_n: Slide {n}
+  pagetop: Back to top
+  footer_terms: Terms of Use
+  footer_privacy: Privacy Policy
+  footer_contact: Contact

@@ -12,25 +12,30 @@ kramdown:
   input: GFM
 
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
-feed:
-  path: devlog/feed.xml
+# Languages: zh-Hant lives at /, English under /en/ (en/_posts for its posts).
+# A translation pairs with its original by the same file slug (posts) or `ref` (pages).
+languages: [zh-Hant, en]
 
 defaults:
-  - scope: { path: "", type: posts }
-    values: { layout: post, body_class: sub }
   - scope: { path: "" }
-    values: { layout: default }
+    values: { layout: default, lang: zh-Hant }
+  - scope: { path: "", type: posts }
+    values: { layout: post, body_class: sub, lang: zh-Hant }
+  - scope: { path: "en" }
+    values: { lang: en, locale: en_US }
+  - scope: { path: "en", type: posts }
+    values: { lang: en, locale: en_US, permalink: "/en/devlog/:year/:month/:title/" }
 
 # Devlog categories: front matter `cat:` uses the key; CSS colours live in .c-<key>.
+# Labels per language; `tag` is the banner badge.
 devlog_cats:
-  system:    { label: 系統,   en: SYSTEM }
-  art:       { label: 美術,   en: ART }
-  fix:       { label: 修正,   en: FIX }
-  milestone: { label: 里程碑, en: MILESTONE }
-  info:      { label: 情報,   en: INFO }
+  system:    { zh-Hant: 系統,   en: System,    tag: SYSTEM }
+  art:       { zh-Hant: 美術,   en: Art,       tag: ART }
+  fix:       { zh-Hant: 修正,   en: Fix,       tag: FIX }
+  milestone: { zh-Hant: 里程碑, en: Milestone, tag: MILESTONE }
+  info:      { zh-Hant: 情報,   en: Info,      tag: INFO }
 
 exclude:
   - README.md

@@ -1,0 +1,92 @@
+# Home page copy per language (rendered by _includes/home.html).
+zh-Hant:
+  kv_label: 主視覺
+  catch: 靈魂已然耗損，世界瀕臨崩壞──<br>而你，是賜予轉生的神。
+  cta_story: 開始你的神諭
+  cta_movie: 觀看宣傳影片
+  scroll: 向下捲動
+  devlog_sub: 開發日誌
+  story_sub: 故事
+  story:
+    - { lead: true, text: "這是一個充滿混亂與爭鬥的世界。" }
+    - { text: "無止盡的戰火讓靈魂不斷耗損，世界正一步步走向毀滅。<br>為了調和失衡，掌管轉生的神祇──也就是「你」──<br>必須定期從異界引入新的靈魂。" }
+    - { text: "你將賜予他們新的生命與天賦，引導他們成為勇者。<br>然而，被引導者終將察覺：<br>身邊的一切，似乎都被一股無形的力量所操弄……" }
+    - { lead: true, text: "祝福，抑或詛咒？<br>轉生者的命運，掌握在你的手中。" }
+  character_sub: 角色
+  character_pick: 角色選擇
+  characters:
+    - { role: 主角, name: 轉生者, en: THE REINCARNATED, c: "#e2c27a", desc: "自異界被召喚而來的靈魂。被賦予新的生命與天賦，背負著調和世界的使命──卻逐漸察覺命運背後那隻無形的手。", quote: "……總覺得，有誰一直在看著我。" }
+    - { role: 神祇, name: 轉生之神, en: THE GOD OF REBIRTH, c: "#9fb8ff", desc: "也就是「你」。掌管轉生、引入異界之魂的神祇。以神力干涉轉生者身邊的一切，無論是祝福還是災厄。", quote: "去吧，我的勇者。你的一切，都由我來決定。" }
+    - { role: 酒館, name: 酒館老闆, en: THE TAVERN MASTER, c: "#f0a68a", desc: "不識字的酒館老闆。熱情好客，卻總把菜單寫錯，每次都被酒保糾正。", quote: "「熱待」？「熱呆」？有差嗎？客人都在等啊！" }
+    - { role: 酒館, name: 不喝酒的酒保, en: THE SOBER BARTENDER, c: "#c79bff", desc: "冷靜毒舌的酒保。發誓戒酒，因為每次醉後醒來，身邊躺著的總是酒館裡最不受歡迎的客人。", quote: "抱歉，我已經戒酒了。……說起來，您的吟遊詩人組合最近有新作品嗎？" }
+    - { role: 教堂, name: 虔誠的信徒, en: THE DEVOUT, c: "#8ad0c4", desc: "在教堂為女友點燈祈福的男人。看見捐獻箱裡滿滿的錢時，信仰出現了微妙的動搖。", quote: "既然都走到這一步了……" }
+    - { role: 市井, name: 縮寫愛好者, en: THE ABBREVIATOR, c: "#f2d36b", desc: "無論說什麼，最後都一定要強調一次縮寫的神秘人物。ＴＭＩ（資訊過多）。", quote: "這叫做「轉生者們」，簡稱「轉們」。ＺＭ。" }
+  system_sub: 系統
+  tab_god: 上帝視角
+  tab_hero: 勇者視角
+  sys_god:
+    - { title: 角色創造機制, text: "從異界召喚靈魂，決定其容貌、起源與天賦，親手塑造一位全新的勇者。" }
+    - { title: 五大天賦系統, text: "「起源・元素・成長天賦・天命・美德與罪宗」交織出每位轉生者獨一無二的命運。" }
+    - { title: 十三位神明, text: "掌管不同屬性的十三柱神明，與你共同干涉世界的規則──是盟友，也可能是對手。" }
+  sys_hero:
+    - { title: 鍊金系統, text: "採集素材、調和藥劑，以知識撬動世界的法則。" }
+    - { title: 料理系統, text: "以異世界食材烹調佳餚，為冒險提供強化與恢復。" }
+    - { title: 鍛造系統, text: "鍛打武器與防具，讓轉生者的力量化為實體。" }
+  ending_sub: 命運的分歧
+  endings:
+    - { title: 殞落, text: "轉生者死亡，靈魂被傳送至你的身邊，一切記憶與力量歸於神。" }
+    - { title: 庸碌, text: "未能找出操弄命運的幕後黑手，平凡地度過一生。" }
+    - { title: 謁見, text: "達成世界任務，與伙伴一同來到你面前。挑戰神，或接受命運？" }
+    - { title: 魔王, text: "被魔族之力腐化，走向毀滅世界──或弒神篡位的道路。" }
+  movie_sub: 影片
+  movie_play: 播放宣傳影片
+  movie_label: 第一彈 宣傳影片
+  movie_dialog: 宣傳影片
+  movie_close: 關閉
+  movie_soon: 影片準備中<br><small>（YouTube iframe）</small>
+
+en:
+  kv_label: Key visual
+  catch: Souls are wearing thin, and the world is on the brink of collapse—<br>and you are the god who grants rebirth.
+  cta_story: Begin your oracle
+  cta_movie: Watch the trailer
+  scroll: Scroll down
+  devlog_sub: ""
+  story_sub: ""
+  story:
+    - { lead: true, text: "This is a world of chaos and endless strife." }
+    - { text: "Unending wars wear souls away, and the world is sliding toward ruin.<br>To restore the balance, the god of rebirth—that is, you—<br>must bring in new souls from other worlds." }
+    - { text: "You grant them new lives and gifts, and guide them to become heroes.<br>Yet in time, those you guide will notice:<br>everything around them seems to be moved by an unseen hand…" }
+    - { lead: true, text: "A blessing, or a curse?<br>The fate of the reincarnated is in your hands." }
+  character_sub: ""
+  character_pick: Choose a character
+  characters:
+    - { role: Protagonist, name: The Reincarnated, en: 轉生者, c: "#e2c27a", desc: "A soul summoned from another world. Given a new life and new gifts, they carry the duty of restoring balance—only to slowly sense the unseen hand behind their fate.", quote: "…I can't shake the feeling that someone is always watching me." }
+    - { role: Deity, name: The God of Rebirth, en: 轉生之神, c: "#9fb8ff", desc: "That is, you. The god who governs rebirth and brings souls in from other worlds, reaching into every corner of the reincarnated's life—whether as blessing or as calamity.", quote: "Go forth, my hero. Everything about you is mine to decide." }
+    - { role: Tavern, name: The Tavern Master, en: 酒館老闆, c: "#f0a68a", desc: "A tavern master who can't read. Warm and welcoming, but forever misspelling the menu and getting corrected by the bartender.", quote: "\"Stew\"? \"Stoo\"? What's the difference? The customers are waiting!" }
+    - { role: Tavern, name: The Sober Bartender, en: 不喝酒的酒保, c: "#c79bff", desc: "A cool, sharp-tongued bartender who swore off drinking—because every time they woke up after a night of it, the least popular patron in the tavern was lying beside them.", quote: "Sorry, I've quit drinking. …By the way, has your bard troupe released anything new lately?" }
+    - { role: Church, name: The Devout, en: 虔誠的信徒, c: "#8ad0c4", desc: "A man who lights a candle at the church to pray for his girlfriend. One look at the overflowing donation box, and his faith begins to waver.", quote: "Well, since I've come this far…" }
+    - { role: Townsfolk, name: The Abbreviator, en: 縮寫愛好者, c: "#f2d36b", desc: "A mysterious figure who must end every sentence by stressing an abbreviation. TMI (Too Much Information).", quote: "It's called The Reincarnated. TR for short. T.R." }
+  system_sub: ""
+  tab_god: God's view
+  tab_hero: Hero's view
+  sys_god:
+    - { title: Character Creation, text: "Summon a soul from another world, choose their looks, origin and gifts, and shape a brand-new hero with your own hands." }
+    - { title: Five Gift Systems, text: "Origin, Element, Growth, Destiny, and Virtues & Sins weave a fate unique to every reincarnated soul." }
+    - { title: Thirteen Gods, text: "Thirteen gods, each ruling a different element, shape the rules of the world alongside you—as allies, or as rivals." }
+  sys_hero:
+    - { title: Alchemy, text: "Gather materials and brew potions, bending the laws of the world through knowledge." }
+    - { title: Cooking, text: "Cook dishes from otherworldly ingredients to empower and restore you on your adventures." }
+    - { title: Smithing, text: "Forge weapons and armor, turning the reincarnated's power into something you can hold." }
+  ending_sub: Diverging fates
+  endings:
+    - { title: Fallen, text: "The reincarnated dies. Their soul returns to your side, and every memory and power goes back to the god." }
+    - { title: Ordinary, text: "Never uncovering the hand behind their fate, they live out a quiet, ordinary life." }
+    - { title: Audience, text: "Having completed the world's quest, they stand before you with their companions. Challenge the god, or accept fate?" }
+    - { title: Demon Lord, text: "Corrupted by demonic power, they walk the path of destroying the world—or of slaying the god and taking the throne." }
+  movie_sub: ""
+  movie_play: Play the trailer
+  movie_label: Trailer No. 1
+  movie_dialog: Trailer
+  movie_close: Close
+  movie_soon: Trailer coming soon<br><small>(YouTube iframe)</small>

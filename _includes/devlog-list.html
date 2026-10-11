@@ -1,0 +1,35 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign posts = site.posts | where: "lang", page.lang -%}
+<header class="page-hd">
+  <div class="sec-head"><h1>DEVLOG</h1>{% if page.lang != 'en' %}<p>{{ t.devlog_title }}</p>{% endif %}<svg class="orn"><use href="#i-ornament"/></svg></div>
+</header>
+
+<div class="devlog">
+  <div class="dl-filter" role="group" aria-label="{{ t.devlog_filter }}">
+    <button class="on" data-cat="" aria-pressed="true">{{ t.devlog_filter_all }}</button>
+    {%- for c in site.devlog_cats %}
+    <button data-cat="{{ c[0] }}" aria-pressed="false">{{ c[1][page.lang] }}</button>
+    {%- endfor %}
+  </div>
+
+  {%- assign years = posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+  {%- for y in years %}
+  <section class="dl-year">
+    <h2>{{ y.name }}</h2>
+    <ol class="dl-list">
+      {%- for post in y.items %}
+      {%- assign cat = site.devlog_cats[post.cat] %}
+      <li data-cat="{{ post.cat }}">
+        <a href="{{ post.url | relative_url }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m.%d" }}</time>
+          {%- if cat %}<span class="cat c-{{ post.cat }}">{{ cat[page.lang] }}</span>{% else %}<span></span>{% endif %}
+          <span class="dl-text"><b>{{ post.title }}</b><small>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 120 }}</small></span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endfor %}
+  {%- if posts.size == 0 %}<p class="dl-empty">{{ t.devlog_empty }}</p>{% endif %}
+  <p class="dl-empty dl-none" hidden>{{ t.devlog_none }}</p>
+</div>

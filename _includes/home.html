@@ -1,0 +1,152 @@
+{%- assign h = site.data.home[page.lang] -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign posts = site.posts | where: "lang", page.lang -%}
+{%- assign devlog_url = t.base | append: '/devlog/' | relative_url -%}
+<!-- HERO -->
+<section class="kv" aria-label="{{ h.kv_label }}">
+  <svg class="kv-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="kvSky" cx="50%" cy="35%" r="75%"><stop offset="0" stop-color="#3a3f6b"/><stop offset=".55" stop-color="#1a1b33"/><stop offset="1" stop-color="#0a0a14"/></radialGradient>
+      <radialGradient id="kvGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe7a8" stop-opacity=".85"/><stop offset="1" stop-color="#ffe7a8" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1600" height="900" fill="url(#kvSky)"/>
+    <g fill="#fff" class="stars"><circle cx="120" cy="90" r="1.5"/><circle cx="340" cy="210" r="1"/><circle cx="520" cy="60" r="1.8"/><circle cx="1100" cy="120" r="1.4"/><circle cx="1280" cy="260" r="1"/><circle cx="1480" cy="80" r="1.6"/><circle cx="760" cy="40" r="1"/><circle cx="960" cy="230" r="1.2"/><circle cx="220" cy="330" r="1"/><circle cx="1400" cy="380" r="1.3"/></g>
+    <circle cx="800" cy="380" r="330" fill="url(#kvGlow)"/>
+    <g class="kv-ring" fill="none" stroke="#f0d48a" stroke-opacity=".5"><circle cx="800" cy="380" r="210" stroke-width="2"/><circle cx="800" cy="380" r="250" stroke-dasharray="4 10"/><circle cx="800" cy="380" r="300" stroke-opacity=".25"/></g>
+    <path d="M0 700 L160 610 L300 660 L470 560 L640 650 L800 590 L980 660 L1130 570 L1300 640 L1450 590 L1600 650 V900 H0 Z" fill="#14142a"/>
+    <path d="M0 780 L200 720 L420 770 L640 710 L860 770 L1080 720 L1300 770 L1600 720 V900 H0 Z" fill="#0b0b18"/>
+    <!-- towers -->
+    <g fill="#0b0b18"><rect x="230" y="600" width="26" height="130"/><path d="M224 600 L243 560 L262 600Z"/><rect x="1320" y="580" width="30" height="160"/><path d="M1313 580 L1335 535 L1357 580Z"/></g>
+    <!-- descending souls -->
+    <g fill="#ffe7a8" class="souls"><circle cx="620" cy="300" r="4"/><circle cx="980" cy="260" r="3"/><circle cx="700" cy="520" r="3.5"/><circle cx="900" cy="480" r="4"/><circle cx="820" cy="200" r="2.5"/></g>
+  </svg>
+  <div class="kv-inner">
+    <p class="kv-catch">{{ h.catch }}</p>
+    <h1 class="kv-logo">
+      <svg class="kv-emblem" aria-hidden="true"><use href="#i-emblem"/></svg>
+      <span class="kv-title">轉生者們</span>
+      <span class="kv-sub">THE REINCARNATED</span>
+    </h1>
+    <div class="kv-cta">
+      <a href="#story" class="btn btn-gold">{{ h.cta_story }}</a>
+      <a href="#movie" class="btn btn-ghost">{{ h.cta_movie }}</a>
+    </div>
+  </div>
+  <a class="kv-scroll" href="#devlog" aria-label="{{ h.scroll }}">SCROLL</a>
+</section>
+
+<!-- DEVLOG -->
+<section class="sec sec-news" id="devlog">
+  <div class="sec-head"><h2>DEVLOG</h2>{% if h.devlog_sub != "" %}<p>{{ h.devlog_sub }}</p>{% endif %}<svg class="orn"><use href="#i-ornament"/></svg></div>
+  {%- assign featured = posts | where_exp: "p", "p.featured" %}
+  {%- if featured.size == 0 %}{% assign featured = posts %}{% endif %}
+  <div class="news-wrap">
+    <div class="banner-slider" aria-roledescription="carousel">
+      <div class="banner-track">
+        {%- for post in featured limit:3 %}
+        {%- assign cat = site.devlog_cats[post.cat] %}
+        <a class="banner b{{ forloop.index0 | modulo: 3 | plus: 1 }}" href="{{ post.url | relative_url }}"{% if post.image %} style="--img:url('{{ post.image | relative_url }}')"{% endif %}><span class="tag">{{ cat.tag | default: "DEVLOG" }}</span><h3>{{ post.title }}</h3><p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 60 }}</p></a>
+        {%- endfor %}
+      </div>
+      <button class="bn-prev" aria-label="{{ t.slide_prev }}"><svg><use href="#i-arrow"/></svg></button>
+      <button class="bn-next" aria-label="{{ t.slide_next }}"><svg><use href="#i-arrow"/></svg></button>
+      <div class="bn-dots" data-label="{{ t.slide_n }}"></div>
+    </div>
+    <div class="news-side">
+      <ul class="news-list">
+        {%- for post in posts limit:5 %}
+        {%- assign cat = site.devlog_cats[post.cat] %}
+        <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time><span class="cat c-{{ post.cat }}">{{ cat[page.lang] | default: "DEVLOG" }}</span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {%- endfor %}
+      </ul>
+      <a class="news-more" href="{{ devlog_url }}">{{ t.devlog_all }}<svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="sec sec-story" id="story">
+  <svg class="story-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><linearGradient id="stBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9dfc6"/><stop offset="1" stop-color="#cdbb91"/></linearGradient></defs>
+    <rect width="1600" height="900" fill="url(#stBg)"/>
+    <g fill="none" stroke="#8b6b34" stroke-opacity=".18" stroke-width="2"><circle cx="1350" cy="200" r="260"/><circle cx="1350" cy="200" r="200"/><circle cx="240" cy="760" r="220"/></g>
+  </svg>
+  <div class="sec-head dark"><h2>STORY</h2>{% if h.story_sub != "" %}<p>{{ h.story_sub }}</p>{% endif %}<svg class="orn"><use href="#i-ornament"/></svg></div>
+  <div class="story-body">
+    {%- for p in h.story %}
+    <p{% if p.lead %} class="lead"{% endif %}>{{ p.text }}</p>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- CHARACTER -->
+<section class="sec sec-chara" id="character">
+  <div class="sec-head"><h2>CHARACTER</h2>{% if h.character_sub != "" %}<p>{{ h.character_sub }}</p>{% endif %}<svg class="orn"><use href="#i-ornament"/></svg></div>
+  <div class="chara">
+    <div class="chara-stage">
+      <svg class="chara-art" viewBox="0 0 300 500" aria-hidden="true"><use href="#i-person"/></svg>
+      <div class="chara-info" aria-live="polite">
+        <p class="chara-role"></p>
+        <h3 class="chara-name"></h3>
+        <p class="chara-en"></p>
+        <p class="chara-desc"></p>
+        <blockquote class="chara-quote"></blockquote>
+      </div>
+    </div>
+    <div class="chara-thumbs" role="tablist" aria-label="{{ h.character_pick }}"></div>
+  </div>
+  <script type="application/json" id="chara-data">{{ h.characters | jsonify }}</script>
+</section>
+
+<!-- SYSTEM -->
+<section class="sec sec-system" id="system">
+  <div class="sec-head"><h2>SYSTEM</h2>{% if h.system_sub != "" %}<p>{{ h.system_sub }}</p>{% endif %}<svg class="orn"><use href="#i-ornament"/></svg></div>
+  <div class="sys-tabs" role="tablist">
+    <button role="tab" class="on" data-view="god">{{ h.tab_god }}</button>
+    <button role="tab" data-view="hero">{{ h.tab_hero }}</button>
+  </div>
+  <div class="sys-panel on" data-panel="god">
+    {%- for c in h.sys_god %}
+    <article class="sys-card">
+      {{ site.data.home_icons.god[forloop.index0] }}
+      <h3>{{ c.title }}</h3><p>{{ c.text }}</p>
+    </article>
+    {%- endfor %}
+  </div>
+  <div class="sys-panel" data-panel="hero">
+    {%- for c in h.sys_hero %}
+    <article class="sys-card">
+      {{ site.data.home_icons.hero[forloop.index0] }}
+      <h3>{{ c.title }}</h3><p>{{ c.text }}</p>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- ENDING -->
+<section class="sec sec-ending" id="ending">
+  <div class="sec-head"><h2>ENDING</h2><p>{{ h.ending_sub }}</p><svg class="orn"><use href="#i-ornament"/></svg></div>
+  <ol class="routes">
+    {%- assign numerals = "Ⅰ,Ⅱ,Ⅲ,Ⅳ,Ⅴ,Ⅵ" | split: "," %}
+    {%- for e in h.endings %}
+    <li><span>{{ numerals[forloop.index0] }}</span><h3>{{ e.title }}</h3><p>{{ e.text }}</p></li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<!-- MOVIE -->
+<section class="sec sec-movie" id="movie">
+  <div class="sec-head"><h2>MOVIE</h2>{% if h.movie_sub != "" %}<p>{{ h.movie_sub }}</p>{% endif %}<svg class="orn"><use href="#i-ornament"/></svg></div>
+  <button class="movie-thumb" aria-label="{{ h.movie_play }}">
+    <svg class="mv-bg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="900" fill="#1a1b33"/><circle cx="800" cy="450" r="380" fill="none" stroke="#f0d48a" stroke-opacity=".2" stroke-width="2"/><circle cx="800" cy="450" r="260" fill="none" stroke="#f0d48a" stroke-opacity=".3" stroke-dasharray="6 12"/><path d="M0 720 L300 620 L600 700 L900 610 L1200 690 L1600 620 V900 H0Z" fill="#0b0b18"/></svg>
+    <svg class="mv-play"><use href="#i-play"/></svg>
+    <span class="mv-label">{{ h.movie_label }}</span>
+  </button>
+</section>
+
+<div class="modal" hidden role="dialog" aria-modal="true" aria-label="{{ h.movie_dialog }}">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="{{ h.movie_close }}"><svg><use href="#i-x"/></svg></button>
+    <div class="modal-video"><p>{{ h.movie_soon }}</p></div>
+  </div>
+</div>
